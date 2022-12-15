@@ -11,21 +11,24 @@ extra_payment_end_month=int(input('enter end month:'))
 extra_payment=int(input('enter extra payment:'))
 while principal > 0:
     if months>=extra_payment_start_month and months<extra_payment_end_month:
-        principal = principal*(1+rate/12) - (payment+extra_payment)
-        total_paid = total_paid + payment+extra_payment
-        months+=1
-        if principal >=0:
-            print(months,total_paid,principal)
+        if principal<(payment+extra_payment):
+            total_paid = total_paid + principal
+            principal = 0
         else:
-            print(months,total_paid,0)
+            principal = principal * (1+rate/12) - (payment+extra_payment)
+            total_paid = total_paid + payment+extra_payment
+        months+=1
+        print(months,total_paid,principal)
+        
     else:
-        principal = principal*(1+rate/12) - payment 
-        total_paid = total_paid + payment
-        months+=1
-        if principal >=0:
-            print(months,total_paid,principal)
+        if principal<(payment+extra_payment):
+            total_paid = total_paid + principal
+            principal = 0
         else:
-            print(months,total_paid,0)
+            principal = principal * (1+rate/12) - payment
+            total_paid = total_paid + payment
+        months+=1
+        print(months,total_paid,principal)
      
 print('Total paid',total_paid)
 print('number of months req',months)
