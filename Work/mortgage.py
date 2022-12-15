@@ -8,7 +8,7 @@ total_paid=0.0
 months=0
 while principal > 0:
     if months<12:
-        principal = principal*(1+rate/12) - 1000
+        principal = principal*(1+rate/12) - (payment+1000)
         months+=1
     else:
         principal = principal*(1+rate/12) - payment 
