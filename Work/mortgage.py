@@ -14,10 +14,12 @@ while principal > 0:
         principal = principal*(1+rate/12) - (payment+extra_payment)
         total_paid = total_paid + payment+extra_payment
         months+=1
+        print(months,total_paid,principal)
     else:
         principal = principal*(1+rate/12) - payment 
         total_paid = total_paid + payment
         months+=1
+        print(months,total_paid,principal)
      
 print('Total paid',total_paid)
 print('number of months req',months)
