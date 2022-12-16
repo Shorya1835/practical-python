@@ -18,7 +18,7 @@ while principal > 0:
             principal = principal * (1+rate/12) - (payment+extra_payment)
             total_paid = total_paid + payment+extra_payment
         months+=1
-        print(months,total_paid,principal)
+        print(f'{months} {total_paid:0.2f} {principal:0.2f}')
         
     else:
         if principal<(payment+extra_payment):
@@ -28,7 +28,7 @@ while principal > 0:
             principal = principal * (1+rate/12) - payment
             total_paid = total_paid + payment
         months+=1
-        print(months,total_paid,principal)
+        print(f'{months} {total_paid:0.2f} {principal:0.2f}')
      
-print('Total paid',total_paid)
-print('number of months req',months)
+print(f'Total paid {total_paid:0.2f}')
+print(f'number of months req {months}')
