@@ -11,5 +11,5 @@ def portfolio_cost(filename):
     
     return sum
         
-cost=portfolio_cost=('Data/portfolio.csv')
+cost=portfolio_cost=('C:/Users/shory/OneDrive/Documents/GitHub/practical-pythons/Work/Data/portfolio.csv')
 print('Total cost:',cost)
