@@ -16,7 +16,7 @@ def read_portfolio(filename):
 def read_prices(filename):
     prices=[]
     
-    with open('Dataprices.csv','rt') as f:
+    with open(filename,'rt') as f:
         row=csv.reader(f)
         headers=next(rows)
         for row in rows:
