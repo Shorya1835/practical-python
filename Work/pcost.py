@@ -7,8 +7,10 @@ def portfolio_cost(filename):
         next(f)
         for line in f:
             pcost=line.split(',')
-            sum+=int(pcost[1])*float(pcost[2])
-    
+            try:
+                sum+=int(pcost[1])*float(pcost[2])
+            except ValueError:
+                print("Couldn't parse",line)
     return sum
         
 cost=portfolio_cost('Data/portfolio.csv')
