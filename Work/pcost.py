@@ -8,9 +8,8 @@ def portfolio_cost(filename):
         rows=csv.reader(f)
         headers=next(rows)
         for line in rows:
-            pcost=line.split(',')
             try:
-                sum+=int(pcost[1])*float(pcost[2])
+                sum+=int(line[1])*float(line[2])
             except ValueError:
                 print("Couldn't parse",line,end='')
     return sum
