@@ -38,3 +38,10 @@ def retire():
         print('retire')
     else:
         print('cannot retire')
+        
+def make_report(portfolio,prices):
+    print('      Name     Shares      Price     Change')
+    print('---------- ---------- ---------- ----------')
+    for s in portfolio:
+        print(f'{s['name']:>10s} {s['Shares']:>10d} {s['price']:>10.2f} {(price[s['name']]-s['price']):>10.2f}'
+    
