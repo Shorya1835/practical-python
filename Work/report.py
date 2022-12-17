@@ -20,8 +20,10 @@ def read_prices(filename):
         rows=csv.reader(f)
         headers=next(rows)
         for row in rows:
-            if rows!=[]:
+            try:
                 holding={row[0] : float(row[1])}
                 prices.append(holding)
+            except IndexError:
+                None
      
     return prices
