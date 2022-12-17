@@ -32,9 +32,9 @@ def retire():
     totalcost=0.0
     totalvalue=0.0
     for s in portfolio:
-        totalcost+=s[1]*s[2]
+        totalcost+=s['shares']*s['price']
     for t,s in prices,portfolio:
-        totalvalue+=s[1]*t[1]
+        totalvalue+=s['shares']*t[s['name']]
         
     if totalcost<=totalvalue:
         print('retire')
