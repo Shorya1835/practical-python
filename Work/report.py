@@ -26,3 +26,17 @@ def read_prices(filename):
                 None
      
     return prices
+def retire():
+    portfolio=read_portfolio('Data/portfolio.csv')
+    prices=read_prices('Data/prices.csv')
+    totalcost=0.0
+    totalvalue=0.0
+    for s in portfolio:
+        totalcost+=s[1]*s[2]
+    for t,s in prices,portfolio:
+        totalvalue=s[1]*t[1]
+        
+    if totalcost<=totalvalue:
+        print('retire')
+    else:
+        print('cannot retire')
