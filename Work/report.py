@@ -14,15 +14,14 @@ def read_portfolio(filename):
             portfolio.append(holding)
     return portfolio
 def read_prices(filename):
-    prices=[]
+    prices={}
     
     with open(filename,'rt') as f:
         rows=csv.reader(f)
         headers=next(rows)
         for row in rows:
             try:
-                holding={row[0] : float(row[1])}
-                prices.append(holding)
+                prices[row[0]]=float(row[1])
             except IndexError:
                 None
      
