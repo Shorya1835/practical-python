@@ -44,5 +44,5 @@ def make_report(portfolio,prices):
     print(f'{headers[0]:>10s} {headers[1]:>10s} {headers[2]:>10s} {headers[3]:>10s}')
     print(f"{' ':->10s}{' ':->10s}{' ':->10s}{' ':->10s}")
     for s in portfolio:
-        print(f"{s['name']:>10s} {s['shares']:>10d} {('$'+str({s['price']:0.2f}):>10s} {(prices[s['name']]-s['price']):>10.2f}")
+        print(f"{s['name']:>10s} {s['shares']:>10d} {('$'+str({s['price']:0.2f})):>10s} {(prices[s['name']]-s['price']):>10.2f}")
     
