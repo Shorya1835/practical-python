@@ -20,9 +20,8 @@ def read_prices(filename):
         rows=csv.reader(f)
         headers=next(rows)
         for row in rows:
-            try:
+            if rows!=None:
                 holding={'name':row[0],'price':row[1]}
                 prices.append(holding)
-            except None:
-                None
+     
     return prices
