@@ -10,7 +10,7 @@ def portfolio_cost(filename):
             try:
                 sum+=int(pcost[1])*float(pcost[2])
             except ValueError:
-                print("Couldn't parse",line)
+                print("Couldn't parse",line,end='')
     return sum
         
 cost=portfolio_cost('Data/portfolio.csv')
