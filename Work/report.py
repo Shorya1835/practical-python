@@ -21,7 +21,7 @@ def read_prices(filename):
         headers=next(rows)
         for row in rows:
             if rows!=[]:
-                holding={'name':row[0],'price':row[1]}
+                holding={row[0] : int(row[1])}
                 prices.append(holding)
      
     return prices
