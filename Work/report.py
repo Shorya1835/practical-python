@@ -42,7 +42,7 @@ def retire():
 def make_report(portfolio,prices):
     headers=('Name','Shares','Price','Change')
     print(f'{headers[0]:>10s} {headers[1]:>10s} {headers[2]:>10s} {headers[3]:>10s}')
-    print(f'{' ':->10s}{' ':->10s}{' ':->10s}{' ':->10s}')
+    print(f"{' ':->10s}{' ':->10s}{' ':->10s}{' ':->10s}")
     for s in portfolio:
         print(f"{s['name']:>10s} {s['shares']:>10d} {s['price']:>10$.2f} {(prices[s['name']]-s['price']):>10.2f}")
     
