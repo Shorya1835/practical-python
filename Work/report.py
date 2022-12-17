@@ -17,7 +17,7 @@ def read_prices(filename):
     prices=[]
     
     with open(filename,'rt') as f:
-        row=csv.reader(f)
+        rows=csv.reader(f)
         headers=next(rows)
         for row in rows:
             holding={'name':row[0],'price':row[1]}
