@@ -24,4 +24,5 @@ def read_prices(filename):
                 holding={'name':row[0],'price':row[1]}
                 prices.append(holding)
             except None:
+                    
     return prices
