@@ -18,6 +18,7 @@ def read_prices(filename):
     
     with open(filename,'rt') as f:
         rows=csv.reader(f)
+        headers=next(rows)
         for n,row in enumerate(rows):
             try:
                 prices[row[0]]=float(row[1])
