@@ -11,7 +11,7 @@ def portfolio_cost(filename):
         for n,line in enumerate(rows,start=1):
             record=dict(zip(headers,line))
             try:
-                sum+=int(line[1])*float(line[2])
+                sum+=int(record['shares'])*float(record['price'])
             except ValueError:
                 print(f"Row {n}: Couldn't convert: {line}")    
     return sum
