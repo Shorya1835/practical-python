@@ -18,12 +18,11 @@ def read_prices(filename):
     
     with open(filename,'rt') as f:
         rows=csv.reader(f)
-        for row in rows:
+        for n,row in enumerate(rows):
             try:
                 prices[row[0]]=float(row[1])
             except IndexError:
-                None
-     
+                print(f"Row {n}: Couldn't convert: {row}")     
     return prices
 def retire():
     portfolio=read_portfolio('Data/portfolio.csv')
