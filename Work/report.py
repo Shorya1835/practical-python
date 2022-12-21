@@ -14,6 +14,9 @@ def read_portfolio(filename):
             portfolio.append(holding)
     return portfolio
 def read_prices(filename):
+    '''
+    Read prices from a CSV file of name,price data
+    '''
     prices={}
     
     with open(filename,'rt') as f:
