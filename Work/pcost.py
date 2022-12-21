@@ -9,6 +9,7 @@ def portfolio_cost(filename):
         rows=csv.reader(f)
         headers=next(rows)
         for n,line in enumerate(rows,start=1):
+            record=dict(zip(headers,line))
             try:
                 sum+=int(line[1])*float(line[2])
             except ValueError:
