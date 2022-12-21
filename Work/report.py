@@ -22,7 +22,7 @@ def read_prices(filename):
             try:
                 prices[row[0]]=float(row[1])
             except IndexError:
-                print(f"Row {n}: Couldn't convert: {row}")     
+                None 
     return prices
 def retire():
     portfolio=read_portfolio('Data/portfolio.csv')
