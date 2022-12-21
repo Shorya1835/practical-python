@@ -8,11 +8,11 @@ def portfolio_cost(filename):
     with open(filename,'rt') as f:
         rows=csv.reader(f)
         headers=next(rows)
-        for line in rows:
+        for n,line in enumerate(rows):
             try:
                 sum+=int(line[1])*float(line[2])
             except ValueError:
-                print("Couldn't parse",line,end='')
+                print(f"Row {n}: Couldn't convert: {line}")    
     return sum
     
 if len(sys.argv)==2:
