@@ -13,7 +13,7 @@ def read_portfolio(filename):
             holding={'name':row[0],'shares':int(row[1]),'price':float(row[2])}
             portfolio.append(holding)
     return portfolio
-def read_prices(filename):
+def read_prices(filename) -> dict:
     '''
     Read prices from a CSV file of name,price data
     '''
