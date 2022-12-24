@@ -19,7 +19,7 @@ def read_prices(filename) -> dict:
     prices={}
     for key,value in price:       
         try:
-            prices[key].append(float(value))
+            prices[key]=float(value)
         except IndexError:
             None
     return prices
