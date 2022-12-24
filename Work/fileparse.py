@@ -18,18 +18,24 @@ def parse_csv(filename,select=[],types=[],has_headers=True,delimiter=','):
             indices=[headers.index(colname) for colname in select]
         else:
             indices=[]
+        i=1
             
-        for row in rows:
-            if not row:
-                continue
-            if indices:
-                row=[row[index] for index in indices]
-            if types:
-                row=[func(val) for func,val in zip(types,row)]
-            if headers:
-                record=dict(zip(headers,row))
-            else:
-                record=tuple(row)
-            records.append(record)
+        try:
+            for row in rows:
+                i+=1
+                if not row:
+                    continue
+                if indices:
+                    row=[row[index] for index in indices]
+                if types:
+                    row=[func(val) for func,val in zip(types,row)]
+                if headers:
+                    record=dict(zip(headers,row))
+                else:
+                    record=tuple(row)
+                records.append(record)
+        except ValueError,e:
+            print(f"Row {i}: Couldn't convert {row}")
+            print(f'Row {i}: {e}')
 
     return records
