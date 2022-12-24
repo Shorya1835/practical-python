@@ -17,7 +17,7 @@ def read_prices(filename) -> dict:
     '''
     price=fileparse.parse_csv(filename)
     pric={}
-    prices[]
+    prices=[]
     for key,value in price:       
         try:
             pric[key]=float(value)
