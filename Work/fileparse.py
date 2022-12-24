@@ -6,7 +6,7 @@ def parse_csv(filename):
     '''
     Parse a CSV file into a list of records
     '''
-    with open(filename) as f:
+    with open(filename,select=[]) as f:
         rows=csv.reader(f)
         headers=next(rows)
         records=[]
