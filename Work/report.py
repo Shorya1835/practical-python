@@ -3,6 +3,7 @@
 # Exercise 2.4
 import csv
 import fileparse
+import sys
 
 def read_portfolio(filename):
     portfolio=fileparse.parse_csv(filename)
@@ -49,7 +50,5 @@ def portfolio_report(fn1,fn2):
     prices=read_prices(fn2)
     make_report(portfolio,prices)
     
-def main(line):
-    portfolio=read_portfolio(line[1])
-    prices=read_prices(line[2])
-    make_report(portfolio,prices)
+if(len(sys.argv) == 3):
+    portfolio_report(sys.argv[1],sys.argv[2])
