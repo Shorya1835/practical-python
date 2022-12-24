@@ -16,10 +16,12 @@ def read_prices(filename) -> dict:
     Read prices from a CSV file of name,price data
     '''
     price=fileparse.parse_csv(filename)
-    prices={}
+    pric={}
+    prices[]
     for key,value in price:       
         try:
-            prices[key]=float(value)
+            pric[key]=float(value)
+            prices.append(pric)
         except IndexError:
             None
     return prices
