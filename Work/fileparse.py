@@ -18,7 +18,7 @@ def parse_csv(filename,select=[],types=[],has_headers=True,delimiter=','):
             indices=[headers.index(colname) for colname in select]
         else:
             indices=[]
-        i=1
+        i=0
             
         try:
             for row in rows:
