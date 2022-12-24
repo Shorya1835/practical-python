@@ -2,11 +2,11 @@
 #
 # Exercise 3.3
 import csv
-def parse_csv(filename):
+def parse_csv(filename,select=[]):
     '''
     Parse a CSV file into a list of records
     '''
-    with open(filename,select=[]) as f:
+    with open(filename) as f:
         rows=csv.reader(f)
         headers=next(rows)
         records=[]
