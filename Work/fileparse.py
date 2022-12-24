@@ -8,6 +8,7 @@ def parse_csv(filename,select=[],types=[],has_headers=True):
     '''
     with open(filename) as f:
         rows=csv.reader(f)
+        headers=[]
         if has_headers:
             headers=next(rows)
         records=[]
