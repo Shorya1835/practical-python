@@ -2,12 +2,12 @@
 #
 # Exercise 3.3
 import csv
-def parse_csv(filename,select=[],types=[],has_headers=True):
+def parse_csv(filename,select=[],types=[],has_headers=True,delimiter=','):
     '''
     Parse a CSV file into a list of records
     '''
     with open(filename) as f:
-        rows=csv.reader(f)
+        rows=csv.reader(f,delimiter=delimiter)
         headers=[]
         if has_headers:
             headers=next(rows)
