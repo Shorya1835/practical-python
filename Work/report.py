@@ -15,7 +15,7 @@ def read_prices(filename) -> dict:
     '''
     Read prices from a CSV file of name,price data
     '''
-    price=fileparse.parse_csv(filename,has_headers=false)
+    price=fileparse.parse_csv(filename,has_headers=False)
     prices={}
     for key,value in price:       
         try:
