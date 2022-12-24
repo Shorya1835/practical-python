@@ -20,9 +20,9 @@ def parse_csv(filename,select=[],types=[],has_headers=True,delimiter=','):
             indices=[]
         i=0
             
-        try:
-            for row in rows:
-                i+=1
+        for row in rows:
+            i+=1
+            try:
                 if not row:
                     continue
                 if indices:
@@ -34,8 +34,8 @@ def parse_csv(filename,select=[],types=[],has_headers=True,delimiter=','):
                 else:
                     record=tuple(row)
                 records.append(record)
-        except ValueError as e:
-            print(f"Row {i}: Couldn't convert {row}")
-            print(f'Row {i}: {e}')
+            except ValueError as e:
+                print(f"Row {i}: Couldn't convert {row}")
+                print(f'Row {i}: {e}')
 
     return records
