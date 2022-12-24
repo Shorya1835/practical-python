@@ -19,7 +19,7 @@ def parse_csv(filename,select=[],types=[],has_headers=True,delimiter=',',silence
         else:
             indices=[]
             
-        for i,row in enumerate(rows):
+        for i,row in enumerate(rows,start=1):
             try:
                 if not row:
                     continue
