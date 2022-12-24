@@ -6,7 +6,8 @@ import fileparse
 import sys
 
 def read_portfolio(filename):
-    portfolio=fileparse.parse_csv(filename)
+    with open(filename) as f:
+        portfolio=fileparse.parse_csv(f)
    
     for row in portfolio:
         row['shares']=int(row['shares'])
@@ -16,7 +17,8 @@ def read_prices(filename) -> dict:
     '''
     Read prices from a CSV file of name,price data
     '''
-    price=fileparse.parse_csv(filename,has_headers=False)
+    with open(filename) as f:
+        price=fileparse.parse_csv(f,has_headers=False)
     prices={}
     for key,value in price:       
         try:
