@@ -3,17 +3,15 @@
 # Exercise 1.27
 import csv
 import sys
+import report
 def portfolio_cost(filename):
     sum=0.0
-    with open(filename,'rt') as f:
-        rows=csv.reader(f)
-        headers=next(rows)
-        for n,line in enumerate(rows,start=1):
-            record=dict(zip(headers,line))
-            try:
-                sum+=int(record['shares'])*float(record['price'])
-            except ValueError:
-                print(f"Row {n}: Couldn't convert: {line}")    
+    record=report.read_portfolio(filename)
+    for n,line in enumerate(record,start=1):
+        try:
+            sum+=int(line['shares'])*float(line['price'])
+        except ValueError:
+            print(f"Row {n}: Couldn't convert: {line}")    
     return sum
     
 if len(sys.argv)==2:
