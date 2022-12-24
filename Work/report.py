@@ -5,12 +5,23 @@ import csv
 import fileparse
 
 def read_portfolio(filename):
-    return fileparse.parse_csv(filename)
+    portfolio=fileparse.parse_csv(filename)
+   
+    for row in portfolio:
+        row['shares']=int(row['shares'])
+        row['price']=float(row['price'])
+    return portfolio
 def read_prices(filename) -> dict:
     '''
     Read prices from a CSV file of name,price data
     '''
-    return fileparse.parse_csv(filename)
+    prices=dict(fileparse.parse_csv(filename))
+    for row in rows:
+        try:
+            prices[row[0]]=float(row[1])
+        except IndexError:
+            None
+    return prices
 def retire():
     portfolio=read_portfolio('Data/portfolio.csv')
     prices=read_prices('Data/prices.csv')
