@@ -18,10 +18,8 @@ def parse_csv(filename,select=[],types=[],has_headers=True,delimiter=',',silence
             indices=[headers.index(colname) for colname in select]
         else:
             indices=[]
-        i=0
             
-        for row in rows:
-            i+=1
+        for i,row in enumerate(rows):
             try:
                 if not row:
                     continue
