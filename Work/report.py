@@ -15,8 +15,9 @@ def read_prices(filename) -> dict:
     '''
     Read prices from a CSV file of name,price data
     '''
-    prices=dict(fileparse.parse_csv(filename))
-    for key,value in prices:       
+    price=fileparse.parse_csv(filename)
+    prices={}
+    for key,value in price:       
         try:
             prices[key]=float(value)
         except IndexError:
