@@ -2,31 +2,15 @@
 #
 # Exercise 2.4
 import csv
+import fileparse
 
 def read_portfolio(filename):
-    portfolio=[]
-   
-    with open(filename, 'rt') as f:
-        rows = csv.reader(f)
-        headers = next(rows)
-        for row in rows:
-            holding={'name':row[0],'shares':int(row[1]),'price':float(row[2])}
-            portfolio.append(holding)
-    return portfolio
+    return fileparse.parse_csv(filename)
 def read_prices(filename) -> dict:
     '''
     Read prices from a CSV file of name,price data
     '''
-    prices={}
-    
-    with open(filename,'rt') as f:
-        rows=csv.reader(f)
-        for n,row in enumerate(rows):
-            try:
-                prices[row[0]]=float(row[1])
-            except IndexError:
-                None 
-    return prices
+    return file.parseparse_csv(filename)
 def retire():
     portfolio=read_portfolio('Data/portfolio.csv')
     prices=read_prices('Data/prices.csv')
