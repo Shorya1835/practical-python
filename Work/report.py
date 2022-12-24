@@ -16,11 +16,12 @@ def read_prices(filename) -> dict:
     Read prices from a CSV file of name,price data
     '''
     prices=dict(fileparse.parse_csv(filename))
-    for name:value in prices:
-        try:
-            prices[name]=float(value)
-        except IndexError:
-            None
+    for row in prices:
+        for key,value in row.items():        
+            try:
+                prices[key]=float(value)
+            except IndexError:
+                None
     return prices
 def retire():
     portfolio=read_portfolio('Data/portfolio.csv')
