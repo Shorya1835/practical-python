@@ -48,3 +48,8 @@ def portfolio_report(fn1,fn2):
     portfolio=read_portfolio(fn1)
     prices=read_prices(fn2)
     make_report(portfolio,prices)
+    
+def main(line):
+    portfolio=read_portfolio(line[1])
+    prices=read_prices(line[2])
+    make_report(portfolio,prices)
