@@ -10,7 +10,7 @@ def read_prices(filename) -> dict:
     '''
     Read prices from a CSV file of name,price data
     '''
-    return file.parseparse_csv(filename)
+    return fileparse.parse_csv(filename)
 def retire():
     portfolio=read_portfolio('Data/portfolio.csv')
     prices=read_prices('Data/prices.csv')
