@@ -1,4 +1,4 @@
-class stock:
+class Stock:
     def _init_ (self,name,shares,price):
         self.name=name
         self.shares=int(shares)
