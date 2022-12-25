@@ -9,7 +9,7 @@ def portfolio_cost(filename):
     record=report.read_portfolio(filename)
     for n,line in enumerate(record,start=1):
         try:
-            sum+=int(line['shares'])*float(line['price'])
+            sum+=int(line.shares)*float(line.price)
         except ValueError:
             print(f"Row {n}: Couldn't convert: {line}")    
     return sum
