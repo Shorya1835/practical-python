@@ -45,7 +45,7 @@ def make_report(reportdata,formatter):
         rowdata=[name,str(shares),f'{price:0.2f}',f'{change:0.2f}']
         formatter.row(rowdata)
 def make_report_data(portfolio,prices):
-    reportdata=[(s.name,int(s.shares),float(s.price),float(price[s.name]-s.price)) for s in portfolio]
+    reportdata=[(s.name,int(s.shares),float(s.price),float(prices[s.name]-s.price)) for s in portfolio]
     return reportdata
 def portfolio_report(fn1,fn2):
     portfolio=read_portfolio(fn1)
