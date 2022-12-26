@@ -47,11 +47,11 @@ def make_report(reportdata,formatter):
 def make_report_data(portfolio,prices):
     reportdata=[(s.name,int(s.shares),float(s.price),float(prices[s.name]-s.price)) for s in portfolio]
     return reportdata
-def portfolio_report(fn1,fn2):
+def portfolio_report(fn1,fn2,fmt='HTML'):
     portfolio=read_portfolio(fn1)
     prices=read_prices(fn2)
     report=make_report_data(portfolio,prices)
-    formatter=tableformat.HTMLTableFormatter()
+    formatter=tableformat.create_formatter(fmt)
     make_report(report,formatter)
     
 if(len(sys.argv) == 3):
