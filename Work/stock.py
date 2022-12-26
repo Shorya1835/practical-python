@@ -12,4 +12,5 @@ class MyStock(Stock):
         self.sell(self.shares)
         
     def cost(self):
-        return 1.25*self.shares*self.price
+        actual_cost = super().cost()
+        return 1.25*actual_cost
