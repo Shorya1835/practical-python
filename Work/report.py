@@ -52,7 +52,7 @@ def portfolio_report(fn1,fn2):
     prices=read_prices(fn2)
     report=make_report_data(portfolio,prices)
     formatter=tableformat.TableFormatter()
-    print_report(report,formatter)
+    make_report(report,formatter)
     
 if(len(sys.argv) == 3):
     portfolio_report(sys.argv[1],sys.argv[2])
