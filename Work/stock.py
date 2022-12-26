@@ -7,3 +7,7 @@ class Stock:
         return self.shares*self.price
     def sell(self,x):
         self.shares=self.shares-x
+class MyStock(Stock):
+    def panic(self):
+        self.sell(self.shares)
+        
