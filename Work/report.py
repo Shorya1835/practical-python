@@ -46,10 +46,13 @@ def make_report(reportdata,formatter):
         formatter.row(rowdata)
 def make_report_data(portfolio,prices):
     reportdata=[(s.name,int(s.shares),float(s.price),float(price[s.name]-s.price)) for s in portfolio]
+    return reportdata
 def portfolio_report(fn1,fn2):
     portfolio=read_portfolio(fn1)
     prices=read_prices(fn2)
-    make_report(portfolio,prices)
+    report=make_report_data(portfolio,prices)
+    formatter=tableformat.TableFormatter()
+    print_report(report,formatter)
     
 if(len(sys.argv) == 3):
     portfolio_report(sys.argv[1],sys.argv[2])
