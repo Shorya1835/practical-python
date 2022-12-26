@@ -8,6 +8,9 @@ class Stock:
     def sell(self,x):
         self.shares=self.shares-x
 class MyStock(Stock):
+    def __init__(self,name,shares,price,factor):
+        super().__init__(name,shares.price)
+        self.factor = factor
     def panic(self):
         self.sell(self.shares)
         
