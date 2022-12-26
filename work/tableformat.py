@@ -26,3 +26,10 @@ class HTMLTableFormatter(TableFormatter):
         
     def row(self,rowdata):
         print(f"<tr><td>{'</td><td>'.join(rowdata)}</td><td>")
+def create_formatter(fmt):
+    if(fmt=='csv'):
+        return CSVTableFormatter()
+    elif(fmt=='HTML'):
+        return HTMLTableFormatter()
+    else:
+        raise RuntimeError(f'Unknown format {fmt}')
