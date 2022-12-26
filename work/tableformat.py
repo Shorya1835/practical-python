@@ -22,7 +22,7 @@ class HTMLTableFormatter(TableFormatter):
     Output portfolio data in HTML format
     '''
     def headings(self,headers):
-        print('<tr><th>','</th><th>'.join(headers),'</th><th>')
+        print(f"<tr><th>{'</th><th>'.join(headers)}</th><th>")
         
     def row(self,rowdata):
-        print('<tr><td>','</td><td>'.join(rowdata),'</td><td>')
+        print(f"<tr><td>{'</td><td>'.join(rowdata)}</td><td>")
