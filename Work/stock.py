@@ -11,3 +11,5 @@ class MyStock(Stock):
     def panic(self):
         self.sell(self.shares)
         
+    def cost(self):
+        return 1.25*self.shares*self.price
