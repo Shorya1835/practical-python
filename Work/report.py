@@ -56,3 +56,5 @@ def portfolio_report(fn1,fn2,fmt='HTML'):
     
 if(len(sys.argv) == 3):
     portfolio_report(sys.argv[1],sys.argv[2])
+elif(len(sys.argv) == 4):
+    portfolio_report(sys.argv[1],sys.argv[2],sys.argv[3])
