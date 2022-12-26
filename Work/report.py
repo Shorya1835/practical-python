@@ -5,7 +5,7 @@ import csv
 import fileparse
 import sys
 import stock
-
+import tableformat
 def read_portfolio(filename):
     with open(filename) as f:
         portfol=fileparse.parse_csv(f)
@@ -39,13 +39,13 @@ def retire():
     else:
         print('cannot retire')
         
-def make_report(portfolio,prices):
-    headers=('Name','Shares','Price','Change')
-    print(f'{headers[0]:>10s} {headers[1]:>10s} {headers[2]:>10s} {headers[3]:>10s}')
-    print(f"{' ':->11s}{' ':->11s}{' ':->11s}{' ':->11s}")
-    for s in portfolio:
-        print(f"{s.name:>10s} {s.shares:>10d} {('$'+'{:0.2f}'.format(prices[s.name])):>10s} {(prices[s.name]-s.price):>10.2f}")
-
+def make_report(reportdata,formatter):
+    formatter.headings(['Name','Shares','Price','Change'])
+    for name,shares,price,change in reportdata:
+        rowdata=[name,str(shares),f'{price:0.2f}',f'{change:0.2f}']
+        formatter.row(rowdata)
+def make_report_data(portfolio,prices):
+    reportdata=[(s.name,int(s.shares),float(s.price),float(price[s.name]-s.price)) for s in portfolio]
 def portfolio_report(fn1,fn2):
     portfolio=read_portfolio(fn1)
     prices=read_prices(fn2)
