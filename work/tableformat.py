@@ -34,7 +34,7 @@ def create_formatter(fmt):
     else:
         raise RuntimeError(f'Unknown format {fmt}')
         
-def print_table(portfolio,columns,TableFormatter):
+def print_table(portfolio,columns,TbleFormatter):
     for s in columns:
         print(f'{s:>10s}',end=' ')
     print()
