@@ -37,8 +37,9 @@ def create_formatter(fmt):
 def print_table(portfolio,columns,TableFormatter):
     for s in columns:
         print(f'{s:>10s}',end=' ')
+    print()
     print(('-'*10 + ' ')*len(columns))
     for d in portfolio:
         for c in columns:
-            print(f'{getattr(d,c):>10s}',end=' ')
+            print(f'{getattr(d,c):>10}',end=' ')
         print()
