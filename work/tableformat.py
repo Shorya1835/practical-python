@@ -26,13 +26,15 @@ class HTMLTableFormatter(TableFormatter):
         
     def row(self,rowdata):
         print(f"<tr><td>{'</td><td>'.join(rowdata)}</td><td>")
+class FormatError(Exception):
+    pass
 def create_formatter(fmt):
     if(fmt=='csv'):
         return CSVTableFormatter()
     elif(fmt=='HTML'):
         return HTMLTableFormatter()
     else:
-        raise RuntimeError(f'Unknown format {fmt}')
+        raise FormatError(f'Unknown format {fmt}')
         
 def print_table(portfolio,columns,TbleFormatter):
     for s in columns:
