@@ -7,6 +7,8 @@ class Stock:
         return self.shares*self.price
     def sell(self,x):
         self.shares=self.shares-x
+    def __repr__(self):
+        return f'Stock({self.name},{self.shares},{self.price})'
 class MyStock(Stock):
     def __init__(self,name,shares,price,factor):
         super().__init__(name,shares.price)
