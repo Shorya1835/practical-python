@@ -33,3 +33,12 @@ def create_formatter(fmt):
         return HTMLTableFormatter()
     else:
         raise RuntimeError(f'Unknown format {fmt}')
+        
+def print_table(portfolio,columns,TableFormatter(:
+    for s in columns:
+        print(f'{s:>10s}',end=' ')
+    print(((('-')*10),end=' ')*2)
+    for d in portfolio:
+        for c in columns:
+            print(f'{getattr(d,c):>10s}',end=' ')
+        print()
