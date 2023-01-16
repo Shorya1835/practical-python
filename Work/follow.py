@@ -1,14 +1,18 @@
 import os
 import time
 
-f=open('Data/stocklog.csv')
-f.seek(0,os.SEEK_END)
-
-while True:
+def follow(filename):
+  f=open(filename)
+  f.seek(0,os.SEEK_END)
   line=f.readline()
-  if line=='':
+  if line='':
     time.sleep(0.1)
     continue
+  yield line
+
+
+if __name__=='__main__':
+  for line in follow('Data/stocklog.csv')
   fields=line.split(',')
   name=fields[0].strip('"')
   price=float(fields[1])
