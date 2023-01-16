@@ -8,7 +8,7 @@ class Portfolio:
   def __len__(self):
     return len(self._holdings)
   
-  def _getitem__(self,index):
+  def __getitem__(self,index):
     return self._holdings[index]
   
   def __contains__(self,name):
