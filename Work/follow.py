@@ -7,8 +7,8 @@ def follow(filename):
   line=f.readline()
   if line=='':
     time.sleep(0.1)
-    continue
-  yield line
+  else:
+    yield line
 
 
 if __name__=='__main__':
