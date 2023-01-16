@@ -1,9 +1,9 @@
 class Portfolio:
   def __init__(self,holdings):
-    self.holdings = holdings
+    self._holdings = holdings
     
   def __iter__(self):
-    return self.__holdings.__iter__()
+    return self._holdings.__iter__()
     
   @property
   def total_cost(self):
