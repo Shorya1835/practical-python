@@ -5,7 +5,7 @@ f=open('Data/stocklog.csv')
 f.seek(0,os.SEEK_END)
 
 while True:
-  line=f.read_line()
+  line=f.readline()
   if line=='':
     time.sleep(0.1)
     continue
