@@ -4,10 +4,11 @@ import time
 def follow(filename):
   f=open(filename)
   f.seek(0,os.SEEK_END)
-  line=f.readline()
-  if line=='':
-    time.sleep(0.1)
-  else:
+  while True:
+    line=f.readline()
+    if line=='':
+      time.sleep(0.1)
+      continue
     yield line
 
 
