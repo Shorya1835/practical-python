@@ -5,8 +5,7 @@ import csv
 import sys
 import report
 def portfolio_cost(filename):
-    record=report.read_portfolio(filename)
-    for n,line in enumerate(record,start=1):    
+    portfolio=report.read_portfolio(filename)   
     return portfolio.total_cost
     
 if len(sys.argv)==2:
