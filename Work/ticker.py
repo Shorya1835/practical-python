@@ -40,7 +40,7 @@ def ticker(portfolio,filename,format):
     rows=parse_stock_data(follow('Data/stocklog.csv'))
     rows=filter_symbols(rows,portfolio)
     formatter=tableformat.create_formatter(format)
-     formatter.headings(['Name','Price','Change'])
+    formatter.headings(['Name','Price','Change'])
     for row in rows:
         formatter.row([ row['name'], f"{row['price']:0.2f}", f"{row['change']:0.2f}"] )
     
