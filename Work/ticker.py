@@ -1,7 +1,7 @@
 from follow import follow
 import csv
 
-if __name__='__main__':
+if __name__=='__main__':
     lines=follow('Data/stocklog.csv')
     rows=parse_stock_data(lines)
     for row in rows:
