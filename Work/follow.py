@@ -24,4 +24,9 @@ if __name__=='__main__':
       change=float(fields[4])
       if name in portfolio:
           print(f'{name:>10s} {price:>10.2f} {change:>10.2f}')
+          
+def filematch(lines,substr):
+  for line in lines:
+    if substr in line:
+      yield line
         
