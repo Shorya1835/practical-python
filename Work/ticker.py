@@ -6,7 +6,7 @@ def select_columns(rows,indices):
     for row in rows:
         yield [row[index] for index in indices]
         
-def convert_types(rows,types)
+def convert_types(rows,types):
     for row in rows:
          yield[func(val) for func,val in zip(types,row)]
        
