@@ -1,7 +1,7 @@
 from follow import follow
 import csv
 import report
-import tableformatter
+import tableformat
 
         
 def select_columns(rows,indices):
@@ -39,4 +39,6 @@ def ticker(portfolio,filename,format):
     portfolio=report.read_portfolio('Data/portfolio.csv')
     rows=parse_stock_data(follow('Data/stocklog.csv'))
     rows=filter_symbols(rows,portfolio)
+    formatter=tableformat.create_formatter(format)
+    tableformat.print_table(rows,['name','price','change'],formatter)
     
