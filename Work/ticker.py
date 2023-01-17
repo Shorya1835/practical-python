@@ -13,6 +13,11 @@ def convert_types(rows,types):
 def make_dicts(rows,headers):
         for row in rows:
                 yield dict(zip(headers,row)) 
+
+def filter_symbols(rows,names):
+        for row in rows:
+            if row['name'] in names:
+                yield row
         
 def parse_stock_data(lines):
     rows = csv.reader(lines)
