@@ -13,13 +13,12 @@ def convert_types(rows,types):
          yield[func(val) for func,val in zip(types,row)]
        
 def make_dicts(rows,headers):
-        for row in rows:
-                yield dict(zip(headers,row)) 
+        rows=(dict(zip(headers,rows)) for row in rows)
+        return rows
 
 def filter_symbols(rows,names):
-        for row in rows:
-            if row['name'] in names:
-                yield row
+        rows=(row for row in rows if row['name'] in names)
+        return rows
         
 def parse_stock_data(lines):
     rows = csv.reader(lines)
