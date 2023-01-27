@@ -4,7 +4,7 @@ class Stock:
     shares=typedproperty.Integer('shares')
     price=typedproperty.Float('price')
     
-    __slots__=('name','_shares','price')
+  
     def __init__ (self,name,shares,price):
         self.name=name
         self.shares=int(shares)
