@@ -1,3 +1,4 @@
+import typedproperty
 class Stock:
     name=String('name')
     shares=Integer('shares')
