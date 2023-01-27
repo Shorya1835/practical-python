@@ -1,8 +1,4 @@
 class Stock:
-    name=typedproperty('name',str)
-    shares=typedproperty('shares',int)
-    price=typedproperty('price',float)
-    
     __slots__=('name','_shares','price')
     def __init__ (self,name,shares,price):
         self.name=name
