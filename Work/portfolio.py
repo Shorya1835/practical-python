@@ -1,3 +1,4 @@
+import fileparse
 class Portfolio:
   def __init__(self):
     self._holdings = []
