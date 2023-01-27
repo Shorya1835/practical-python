@@ -7,6 +7,17 @@ class Portfolio:
       raise TypeError('Expected a Stock instance')
     self._holdings.append(holding)
     
+  @classmethod
+  def from_csv(cls,lines,**opts):
+    self=cls()
+    portdicts=fileparse.parse_csv(lines,select=['name','shares','price'],
+                                  types=[str,int,float],
+                                  **opts)
+    for d in portdicts:
+      self.append(stock.Stock(**d))
+     
+    return self
+  
   def __iter__(self):
     return self._holdings.__iter__()
   
