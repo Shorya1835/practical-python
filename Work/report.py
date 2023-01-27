@@ -8,9 +8,9 @@ import stock
 import tableformat
 from portfolio import Portfolio
 
-def read_portfolio(filename):
+def read_portfolio(filename,**opts):
     with open(filename) as f:
-        portfol=fileparse.parse_csv(f)
+        portfol=fileparse.parse_csv(f,select=['name','shares','price'],types=[str,int,float],**opts)
    
     portfolio=[stock.Stock(**d) for d in portfol]
     return Portfolio(portfolio)
