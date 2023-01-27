@@ -10,7 +10,7 @@ from portfolio import Portfolio
 
 def read_portfolio(filename,**opts):
     with open(filename) as f:
-        portfol=portfolio.from_csv(f)
+        portfol=Portfolio.from_csv(f)
    
     
     return Portfolio(portfol)
