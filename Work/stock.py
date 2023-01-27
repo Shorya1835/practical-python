@@ -10,9 +10,6 @@ class Stock:
         self.shares=int(shares)
         self.price=float(price)
     @property
-    def shares(self):
-        return self._shares
-    @property
     def cost(self):
         return self.shares*self.price
     def sell(self,x):
