@@ -12,7 +12,7 @@ def read_portfolio(filename):
     with open(filename) as f:
         portfol=fileparse.parse_csv(f)
    
-    portfolio=[stock.Stock(d['name'],d['shares'],d['price']) for d in portfol]
+    portfolio=[stock.Stock(**d) for d in portfol]
     return Portfolio(portfolio)
 def read_prices(filename) -> dict:
     '''
