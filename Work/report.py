@@ -10,10 +10,10 @@ from portfolio import Portfolio
 
 def read_portfolio(filename,**opts):
     with open(filename) as f:
-        portfol=fileparse.parse_csv(f,select=['name','shares','price'],types=[str,int,float],**opts)
+        portfol=portfolio.from_csv(f)
    
-    portfolio=[stock.Stock(**d) for d in portfol]
-    return Portfolio(portfolio)
+    
+    return Portfolio(portfol)
 def read_prices(filename) -> dict:
     '''
     Read prices from a CSV file of name,price data
