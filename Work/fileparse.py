@@ -2,6 +2,10 @@
 #
 # Exercise 3.3
 import csv
+import logging
+
+log=logging.getLogger(__name__)
+
 def parse_csv(f,select=[],types=[],has_headers=True,delimiter=',',silence_errors=False):
     '''
     Parse a CSV file into a list of records
@@ -34,7 +38,7 @@ def parse_csv(f,select=[],types=[],has_headers=True,delimiter=',',silence_errors
             records.append(record)
         except ValueError as e:
             if not(silence_errors):
-                print(f"Row {i}: Couldn't convert {row}")
-                print(f'Row {i}: {e}')
+                log.warning("Couldn't parse : %s", i)
+                log.debug("Reason : %s", e)
 
     return records
