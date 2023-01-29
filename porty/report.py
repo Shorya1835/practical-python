@@ -6,7 +6,7 @@ from . import fileparse
 import sys
 from . import stock
 from . import tableformat
-from porty.portfolio import Portfolio
+from .portfolio import Portfolio
 
 def read_portfolio(filename,**opts):
     with open(filename) as f:
