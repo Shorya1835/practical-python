@@ -38,7 +38,7 @@ def parse_csv(f,select=[],types=[],has_headers=True,delimiter=',',silence_errors
             records.append(record)
         except ValueError as e:
             if not(silence_errors):
-                log.warning("Couldn't parse : %s", i)
-                log.debug("Reason : %s", e)
+                log.warning("Row %d: Couldn't convert %s", i, row)
+                log.debug("Row %d: Reason %s", i, e)
 
     return records
