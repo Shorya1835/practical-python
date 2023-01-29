@@ -1,8 +1,8 @@
 # fileparse.py
 #
 # Exercise 3.3
-import csv
-import logging
+from . import csv
+from . import logging
 
 log=logging.getLogger(__name__)
 
