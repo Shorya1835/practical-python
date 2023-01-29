@@ -1,8 +1,8 @@
 # pcost.py
 #
 # Exercise 1.27
-from . import csv
-from . import sys
+import csv
+import sys
 from . import report
 
 def portfolio_cost(filename):
