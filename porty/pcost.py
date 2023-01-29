@@ -1,9 +1,10 @@
 # pcost.py
 #
 # Exercise 1.27
-import csv
-import sys
-import report
+from . import csv
+from . import sys
+from . import report
+
 def portfolio_cost(filename):
     portfolio=report.read_portfolio(filename)   
     return portfolio.total_cost
