@@ -1,4 +1,5 @@
-import typedproperty
+from . import typedproperty
+
 class Stock:
     name=typedproperty.String('name')
     shares=typedproperty.Integer('shares')
