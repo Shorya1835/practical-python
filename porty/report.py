@@ -1,9 +1,9 @@
 # report.py
 #
 # Exercise 2.4
-from . import csv
+import csv
 from . import fileparse
-from . import sys
+import sys
 from . import stock
 from . import tableformat
 from porty.portfolio import Portfolio
