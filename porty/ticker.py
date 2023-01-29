@@ -1,7 +1,7 @@
-from follow import follow
-import csv
-import report
-import tableformat
+from porty.follow import follow
+from . import csv
+from . import report
+from . import tableformat
 
         
 def select_columns(rows,indices):
