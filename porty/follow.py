@@ -1,5 +1,5 @@
-import os
-import time
+from . import os
+from . import time
 
 def follow(filename):
   f=open(filename)
