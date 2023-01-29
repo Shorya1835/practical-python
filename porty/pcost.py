@@ -12,7 +12,7 @@ def portfolio_cost(filename):
 if len(sys.argv)==2:
     filename=sys.argv[1]
 else:
-    filename='Data/portfolio.csv'
+    filename='porty/Data/portfolio.csv'
 
 cost=portfolio_cost(filename)
 print('Total cost:',cost)
