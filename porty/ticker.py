@@ -1,5 +1,5 @@
 from porty.follow import follow
-from . import csv
+import csv
 from . import report
 from . import tableformat
 
