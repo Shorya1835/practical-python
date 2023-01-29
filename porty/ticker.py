@@ -1,4 +1,4 @@
-from porty.follow import follow
+from .follow import follow
 import csv
 from . import report
 from . import tableformat
